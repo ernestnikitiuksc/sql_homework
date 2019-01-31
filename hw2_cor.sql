@@ -65,7 +65,8 @@ FROM
     JOIN ratings
     ON links.movieid=ratings.movieid
 ) AS new_table
-WHERE rating > 3.5
+GROUP BY imdbid
+HAVING AVG(rating) > 3.5
 LIMIT 10;
 
 --4.2 Common Table Expressions: посчитать средний рейтинг по пользователям, у которых более 10 оценок

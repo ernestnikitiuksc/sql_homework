@@ -66,5 +66,3 @@ SELECT DISTINCT department_id, AVG(num_public) OVER (PARTITION BY department_id)
 FROM employee_values
 INNER JOIN chosen_ones
 ON employee_values.department_id = chosen_ones.d_id;
-
-

@@ -62,7 +62,7 @@ AS(
 	) AS new_table2
 	WHERE count_of_chief_docs > 1
 	)
-SELECT DISTINCT department_id, AVG(num_public) OVER (PARTITION BY department_id) as average_pulications
+SELECT DISTINCT department_id, d_name, AVG(num_public) OVER (PARTITION BY department_id) as average_pulications
 FROM employee_values
 INNER JOIN chosen_ones
 ON employee_values.department_id = chosen_ones.d_id;
